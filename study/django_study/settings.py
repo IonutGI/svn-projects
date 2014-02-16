@@ -108,7 +108,8 @@ ROOT_URLCONF = 'django_study.urls'
 WSGI_APPLICATION = 'django_study.wsgi.application'
 
 TEMPLATE_DIRS = (
-	'/home/ionut/Desktop/DjangoLearning/DjangoStudy/study/templates',
+	'/home/ionut/SVNRepository/trunk/study/templates',
+    '/home/ionut/SVNRepository/trunk/study/polls/templates/polls',
 )
 
 INSTALLED_APPS = (
