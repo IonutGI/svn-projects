@@ -1,0 +1,9 @@
+{% if latest_poll_list %}
+    <uL>
+        {% for poll in latest_poll_list %}
+           <li><a href="{% url 'cbv-poll-detail' pk=poll.id %}">{{ poll.question }}</a></li>
+        {% endfor %}
+    </uL>
+{% else %}
+    <p>No polls are available</p>
+{% endif %}
