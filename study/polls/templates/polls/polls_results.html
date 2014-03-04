@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ poll.question }} Voting Results</title>
+</head>
+<body>
+    <ul>
+        {% for choice in poll.choice_set.all %}
+            <li>{{ choice.choice_text }} -- {{ choice.votes }} vote {{ choice.votes|pluralize }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'polls:cbv-poll-detail' pk=poll.id %}">Vote again?</a>
+</body>
+</html>
