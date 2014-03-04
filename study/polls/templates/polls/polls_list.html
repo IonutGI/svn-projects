@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Polls List</title>
+</head>
+<body>
+    {% for poll in polls_list %}
+        <li><a href="{% url 'polls:cbv-poll-detail' pk=poll.id %}">{{ poll.question }}</a></li>
+        <li>{{ poll.choice_set.all }}</li>
+    {% endfor %}
+</body>
+</html>
