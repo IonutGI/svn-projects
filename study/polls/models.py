@@ -3,6 +3,7 @@ from django.utils import timezone
 
 import datetime
 
+
 class Poll(models.Model):
     question = models.CharField(max_length=200)
     pub_date = models.DateTimeField("date published")
@@ -11,11 +12,12 @@ class Poll(models.Model):
         return self.question
 
     def published_recently(self):
-        return self.pub_date >= timezone.now()- datetime.timedelta(days=1)
+        return self.pub_date >= timezone.now()-datetime.timedelta(days=1)
 
     published_recently.admin_order_field = "pub_date"
     published_recently.boolean = True
     published_recently.short_description = "Published recently?"
+
 
 class Choice(models.Model):
     poll = models.ForeignKey(Poll)
