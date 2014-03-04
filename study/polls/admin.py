@@ -7,9 +7,11 @@ from django.contrib import admin
 from polls.models import Choice, Poll
 from django.contrib.admin.templatetags.admin_list import date_hierarchy
 
+
 class ChoiceInLine(admin.TabularInline):
     model = Choice
     extra = 3
+
 
 class PollAdmin(admin.ModelAdmin):
 
