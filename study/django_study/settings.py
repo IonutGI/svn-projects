@@ -12,7 +12,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/home/ionut/SVNRepository/trunk/study/database.db',# Or path to database file if using sqlite3.
+        'NAME': '/home/ionut/Desktop/Django-Study-SVN/trunk/study/database.db',# Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': '',
         'PASSWORD': '',
@@ -108,8 +108,8 @@ ROOT_URLCONF = 'django_study.urls'
 WSGI_APPLICATION = 'django_study.wsgi.application'
 
 TEMPLATE_DIRS = (
-	'/home/ionut/SVNRepository/trunk/study/templates',
-    '/home/ionut/SVNRepository/trunk/study/polls/templates/polls',
+	'/home/ionut/Desktop/Django-Study-SVN/trunk/study/templates',
+    '/home/ionut/Desktop/Django-Study-SVN/trunk/study/polls/templates/polls',
 )
 
 INSTALLED_APPS = (

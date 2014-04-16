@@ -47,7 +47,7 @@ def results(request, poll_id):
 
 
 class PollList(ListView):
-    model  = Poll
+    model = Poll
     template_name = "polls_list.html"
 
     def get_context_data(self, **kwargs):
@@ -60,15 +60,19 @@ class PollIndex(TemplateView):
     
     model = Poll
     template_name = "polls_index.html"
+    # context_object_name = "latest_poll_list"
 
     @staticmethod
-    def latest5(self):
+    def latest5():
         return Poll.objects.order_by("-pub_date")[:5]
 
     def get_context_data(self, **kwargs):
         context = super(PollIndex, self).get_context_data(**kwargs)
-        context["latest_poll_list"] =PollIndex.latest5()
+        context["latest_poll_list"] = PollIndex.latest5()
         return context
+
+    # def get_queryset(self):
+    #     return PollIndex.latest5()
 
 
 class PollVote(BaseCreateView):
